@@ -1,6 +1,6 @@
 **Data**
 
-Download this dataset and put all the files under data/raw
+Download this dataset and put all the files under data/clean
 
 Run data_cleaner.py
 
