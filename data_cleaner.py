@@ -64,46 +64,46 @@ min_name = ""
 max_name = ""
 total = 0
 counter = 0
-# for i in os.listdir("data/raw"):
-#   waveform, sample_rate = torchaudio.load(f"data/raw/{i}")
-#   w = librosa.effects.trim(waveform[0], top_db=20)
-#   length = len(waveform[0])
-#   if length > max_len:
-#     max_len = length
-#     max_name = i
-#   if length < min_len:
-#     min_len = length
-#     min_name = i
-#   total += length
-#
-# print(min_len)
-# print(min_name)
-# print(max_len)
-# print(max_name)
-# print(total/(len(os.listdir("data/raw"))))
-# w = w[0].reshape(1,len(w[0]))
-# plot_waveform(w, sample_rate)
-# plot_specgram(w, sample_rate)
-# play_obj = sa.play_buffer(w.numpy(),1,4, sample_rate)
-# # exit(0)
+for i in os.listdir("data/raw"):
+  waveform, sample_rate = torchaudio.load(f"data/raw/{i}")
+  w = librosa.effects.trim(waveform[0], top_db=20)
+  length = len(waveform[0])
+  if length > max_len:
+    max_len = length
+    max_name = i
+  if length < min_len:
+    min_len = length
+    min_name = i
+  total += length
 
-# low = 0;
-# for i in os.listdir("data/clean"):
-#   print(f"Processing {i}")
-#   waveform, sample_rate = torchaudio.load(f"data/clean/{i}")
-#   length = len(waveform[0])
-#   #waveform = librosa.effects.trim(waveform[0], top_db=top_db)
-#   #soundfile.write(f"data/cleaner/{i}", waveform[0], sample_rate)
-#   #length = len(waveform[0])
-#   if length < 60000:
-#     low = low +1
-#   if length > max_len:
-#     max_len = length
-#     max_name = i
-#   if length < min_len:
-#     min_len = length
-#     min_name = i
-#   total += length
+print(min_len)
+print(min_name)
+print(max_len)
+print(max_name)
+print(total/(len(os.listdir("data/raw"))))
+w = w[0].reshape(1,len(w[0]))
+plot_waveform(w, sample_rate)
+plot_specgram(w, sample_rate)
+play_obj = sa.play_buffer(w.numpy(),1,4, sample_rate)
+# exit(0)
+
+low = 0;
+for i in os.listdir("data/clean"):
+  print(f"Processing {i}")
+  waveform, sample_rate = torchaudio.load(f"data/clean/{i}")
+  length = len(waveform[0])
+  #waveform = librosa.effects.trim(waveform[0], top_db=top_db)
+  #soundfile.write(f"data/cleaner/{i}", waveform[0], sample_rate)
+  #length = len(waveform[0])
+  if length < 60000:
+    low = low +1
+  if length > max_len:
+    max_len = length
+    max_name = i
+  if length < min_len:
+    min_len = length
+    min_name = i
+  total += length
 
 for i in os.listdir("data/clean"):
   print(f"Processing {i}")
@@ -129,7 +129,7 @@ print(min_name)
 print(max_len)
 print(max_name)
 print(counter)
-print(len(os.listdir("data/clean")))
+print(len(os.listdir("data/cleaner")))
 print(total/counter)
 
 exit(0)

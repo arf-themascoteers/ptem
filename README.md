@@ -1,3 +1,17 @@
+**Data**
+
+Download this dataset and put all the files under data/raw
+
+Run data_cleaner.py
+
+Run train_emotion.py to train the emotion recognition machine (it will train and dump the machine in models folder)
+
+Run test_emotion.py to test the emotion recognition machine
+
+Run train_speaker.py to train the speaker recognition machine (it will train and dump the machine in models folder)
+
+Run test_speaker.py to test the speaker recognition machine
+
 **Install**
 ```
 pip install -r requirements.txt
