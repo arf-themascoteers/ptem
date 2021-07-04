@@ -20,7 +20,7 @@ def train():
     model.train()
     optimizer = torch.optim.Adam(model.parameters(), lr=1e-3, weight_decay=1e-5)
     for epoch  in range(0, NUM_EPOCHS):
-        for mel, sample_rate, emotion, emotion_index, speaker, speaker_index in dataloader:
+        for wav, mel, sample_rate, emotion, emotion_index, speaker, speaker_index in dataloader:
             optimizer.zero_grad()
             y_pred = model(mel)
             loss = F.nll_loss(y_pred, emotion_index)

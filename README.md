@@ -1,15 +1,12 @@
-**Data**
-
-Download this dataset:https://www.kaggle.com/barelydedicated/savee-database and put all the files under data/clean
-
-Run data_cleaner.py
-
 **Install**
 ```
 pip install -r requirements.txt
 ```
 
-Look https://pytorch.org to install PyTorch
+**Data**
+
+Run data_cleaner.py
+
 
 **Run**
 

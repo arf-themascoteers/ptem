@@ -21,7 +21,7 @@ import torch.nn.functional as F
 # torchaudio.save("temp.wav", waveform2, sample_rate)
 
 
-filename = "data/dev/DC_su03.wav"
+filename = "data/dev/JK_f08.wav"
 waveform, sample_rate = torchaudio.load(filename)
 info = torchaudio.info(filename)
 print(info.num_frames)

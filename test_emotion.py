@@ -15,7 +15,7 @@ def test():
     correct = 0
     total = 0
     with torch.no_grad():
-        for mel, sample_rate, emotion, emotion_index, speaker, speaker_index in dataloader:
+        for wav, mel, sample_rate, emotion, emotion_index, speaker, speaker_index in dataloader:
             y_pred = model(mel)
             pred = torch.argmax(y_pred, dim=1, keepdim=True)
             correct += pred.eq(emotion_index.data.view_as(pred)).sum()

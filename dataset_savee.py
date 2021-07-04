@@ -122,14 +122,6 @@ class DatasetSavee(Dataset):
         emotion_index = self.unique_emotions.index(emotion)
         speaker = self.speakers[idx]
         speaker_index = self.unique_speakers.index(speaker)
-        return mel_specgram, sample_rate, emotion, emotion_index, speaker, speaker_index
+        return waveform, mel_specgram, sample_rate, emotion, emotion_index, speaker, speaker_index
 
-if __name__ == "__main__":
-    from torch.utils.data import DataLoader
-    dataset = DatasetSavee("all")
-    dataloader = DataLoader(dataset, batch_size=3, shuffle=False)
 
-    for waveform, mel_specgram, sample_rate, emotion, emotion_index, speaker, speaker_index in dataloader:
-        print(mel_specgram.shape, emotion, speaker)
-        print(mel_specgram[0,0,0:2,0:2])
-        break
